@@ -7,7 +7,10 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class PlayerNavigationComponent {
   showComponentA: boolean | undefined;
+  btnPlayerBValid: boolean | undefined;
+  btnResultValid: boolean | undefined;
   showComponentB: boolean | undefined;
+  results: boolean | undefined;
   displayPlayerA() {
     console.log(`show true: ${this.showComponentA}`);
     this.showComponentA = true;
