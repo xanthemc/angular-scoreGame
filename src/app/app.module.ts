@@ -9,6 +9,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { PlayerComponent } from './player/player.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PlayerResultComponent } from './player-result/player-result.component';
+import { PlayerNavigationComponent } from './player-navigation/player-navigation.component';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { PlayerResultComponent } from './player-result/player-result.component';
     HttpClientModule,
     RouterModule.forRoot([
       // { path: '', component: ProductListComponent }
-      { path: '', component: PlayerComponent },
+      // { path: '', component: PlayerComponent },
+      { path: '', component: PlayerNavigationComponent },
     ]),
   ],
   declarations: [
@@ -26,6 +28,7 @@ import { PlayerResultComponent } from './player-result/player-result.component';
     ProductListComponent,
     PlayerComponent,
     PlayerResultComponent,
+    PlayerNavigationComponent,
   ],
   bootstrap: [AppComponent],
 })

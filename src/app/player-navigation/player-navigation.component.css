@@ -1,0 +1,12 @@
+.row {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  border-spacing: 10px;
+  text-align: center;
+}
+
+.column {
+  display: table-cell;
+  text-align: center;
+}
