@@ -8,6 +8,7 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { PlayerComponent } from './player/player.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PlayerResultComponent } from './player-result/player-result.component';
 
 @NgModule({
   imports: [
@@ -24,6 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
     TopBarComponent,
     ProductListComponent,
     PlayerComponent,
+    PlayerResultComponent,
   ],
   bootstrap: [AppComponent],
 })

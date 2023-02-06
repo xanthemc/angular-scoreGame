@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../user';
 import { GameService } from '../game.service';
@@ -8,7 +8,7 @@ import { GameService } from '../game.service';
   templateUrl: './player.component.html',
   styleUrls: ['./player.component.css'],
 })
-export class PlayerComponent {
+export class PlayerComponent implements OnInit {
   @Input() user_id!: number;
   constructor(private http: HttpClient, private gameService: GameService) {}
 

@@ -1,11 +1,11 @@
-<h2 class="container">Player</h2>
+<h2 class="container">Player {{ user_id }}</h2>
 <div class="box">
   <h2 style="text-align:center">Profile</h2>
   <div class="column">
-    <img src="{{user.avatar}}" alt="pic" width="200" height="200">
+    <img src="{{ user.avatar }}" alt="pic" width="200" height="200" />
     <span class="row">First Name: {{ user.first_name }}</span>
-    <span class="row">Last Name: </span>
-    <span class="row">Email: </span>
+    <span class="row">Last Name: {{ user.last_name }}</span>
+    <span class="row">Email: {{ user.email }}</span>
     <span class="row">Draw 1: </span>
     <input type="text" id="draw1" /><br />
 
