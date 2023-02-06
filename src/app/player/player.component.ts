@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../user';
 import { GameService } from '../game.service';
@@ -11,6 +11,11 @@ import { ActivatedRoute } from '@angular/router'; //use in routing different pla
 })
 export class PlayerComponent implements OnInit {
   @Input() user_id!: number;
+  @Input() item = ''; // decorate the property with @Input()
+  @Output() itemChange = new EventEmitter();
+
+  // isFocused: boolean = false;
+
   constructor(
     private http: HttpClient,
     private gameService: GameService,

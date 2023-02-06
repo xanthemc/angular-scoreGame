@@ -10,6 +10,9 @@ export class PlayerNavigationComponent {
   btnPlayerBValid: boolean | undefined;
   btnResultValid: boolean | undefined;
   showComponentB: boolean | undefined;
+
+  item = 'Television';
+
   results: boolean | undefined;
   displayPlayerA() {
     console.log(`show true: ${this.showComponentA}`);

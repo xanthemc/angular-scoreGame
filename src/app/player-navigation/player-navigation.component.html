@@ -1,7 +1,14 @@
 <h3>
   <!-- <app-player [user_id]="1" (notify)="onNotify()"> </app-player> -->
   <button type="button" (click)="displayPlayerA()">Player 1</button>
-  <app-player [user_id]="1" *ngIf="showComponentA"> </app-player>
+
+  <app-player
+    [item]="item"
+    (itemChange)="item = $event"
+    [user_id]="1"
+    *ngIf="showComponentA"
+  >
+  </app-player>
 </h3>
 <h3>
   <button type="button" (click)="displayPlayerB()">Player 2</button>

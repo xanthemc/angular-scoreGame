@@ -1,4 +1,5 @@
 <div>
+  <p>Today's item: {{ item }}</p>
   <h2 class="container">Player {{ user_id }}</h2>
   <div class="box">
     <h2 style="text-align:center">Profile</h2>
@@ -14,6 +15,7 @@
       <input type="text" id="draw2" /><br />
       <span class="row">Draw 3: </span>
       <input type="text" id="draw3" /><br />
+      <label>Test: <input [(ngModel)]="item" /></label>
     </div>
   </div>
 </div>
