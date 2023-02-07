@@ -2,13 +2,15 @@
   <!-- <app-player [user_id]="1" (notify)="onNotify()"> </app-player> -->
   <button type="button" (click)="displayPlayerA()">Player 1</button>
 
-  <app-player
+  <!-- <app-player
+    (playerChange)="playerData = $event"
     [item]="item"
     (itemChange)="item = $event"
+    (playerChange)="playerData = $event"
     [user_id]="1"
     *ngIf="showComponentA"
-  >
-  </app-player>
+  > -->
+  <app-player [user_id]="1" *ngIf="showComponentA"> </app-player>
 </h3>
 <h3>
   <button type="button" (click)="displayPlayerB()">Player 2</button>
@@ -18,7 +20,7 @@
   <button type="button">Result</button>
   <div class="row">
     <div class="column">
-      <app-player-result *ngIf="results"> </app-player-result>
+      <app-player-result> </app-player-result>
       <!-- <app-player [user_id]="1"> </app-player> -->
     </div>
     <!-- <div class="column"><app-player [user_id]="2"> </app-player></div> -->

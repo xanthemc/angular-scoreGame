@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from './user';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -8,16 +9,17 @@ import { User } from './user';
 export class GameService {
   constructor(private http: HttpClient) {}
   user: User[] = [];
-  userScore: any = [];
+  // userScore: any = [];
+  // playerData: any = [];
 
-  addUserScore(score: any) {
-    return this.userScore.push(score);
-  }
-  getUserScore(user_id: any) {
-    return this.user.find((x) => x.id == user_id);
+  private scores = new BehaviorSubject<number[]>([-1, -1, -1, -1, -1, -1]);
+  currentScores = this.scores.asObservable();
 
-    // return this.userScore;
+  updateScores(scores: number[]) {
+    this.scores.next(scores);
+    console.log(`service --scores: ` + this.scores);
   }
+
   getSingleUser(user_id: string) {
     return this.http.get<string>(`https://reqres.in/api/users/${user_id}`);
   }
