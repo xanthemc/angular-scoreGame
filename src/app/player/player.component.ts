@@ -36,14 +36,25 @@ export class PlayerComponent implements OnInit {
 
   ngOnInit() {
     this.subscription = this.gameService.currentScores.subscribe((scores) => {
-      console.log(`scores user ${this.user_id}: ${scores}`);
+      // console.log(`scores user ${this.user_id}: ${scores}`);
       this.scores_local = scores;
-      console.log(`scores: ` + this.scores_local);
+      // console.log(`scores: ` + this.scores_local);
+      if (this.user_id == 1) {
+        this.draw1 = this.scores_local[0];
+        this.draw2 = this.scores_local[1];
+        this.draw3 = this.scores_local[2];
+      }
+      if (this.user_id == 2) {
+        this.draw1 = this.scores_local[3];
+        this.draw2 = this.scores_local[4];
+        this.draw3 = this.scores_local[5];
+      }
+      // this.draw1 = this.scores_local[0];
     });
 
     this.gameService.getSingleUser(`${this.user_id}`).subscribe((data: any) => {
       let user_data = data;
-      console.log(JSON.stringify(user_data));
+      // console.log(JSON.stringify(user_data));
       this.user = {
         id: user_data['data']['id'],
         email: user_data['data']['email'],
@@ -56,21 +67,21 @@ export class PlayerComponent implements OnInit {
   }
 
   get draw1() {
-    console.log('AppComponent.getter', this._draw1);
+    // console.log('AppComponent.getter', this._draw1);
     return this._draw1;
   }
 
   get draw2() {
-    console.log('AppComponent.getter2', this._draw2);
+    // console.log('AppComponent.getter2', this._draw2);
     return this._draw2;
   }
   get draw3() {
-    console.log('AppComponent.getter3', this._draw3);
+    // console.log('AppComponent.getter3', this._draw3);
     return this._draw3;
   }
 
   set draw1(value: number) {
-    console.log('AppComponent.setter', value);
+    // console.log('AppComponent.setter', value);
     this._draw1 = value;
     // let idx = this.user_id - 1;
     let idx;
@@ -82,7 +93,7 @@ export class PlayerComponent implements OnInit {
     this.updateScoreArray(idx, value);
   }
   set draw2(value2: number) {
-    console.log('AppComponent.setter2', value2);
+    // console.log('AppComponent.setter2', value2);
     this._draw2 = value2;
     let idx2;
     // let idx2 = this.user_id;
@@ -94,7 +105,7 @@ export class PlayerComponent implements OnInit {
     this.updateScoreArray(idx2, value2);
   }
   set draw3(value3: number) {
-    console.log('AppComponent.setter3', value3);
+    // console.log('AppComponent.setter3', value3);
     this._draw3 = value3;
     let idx3;
     // let idx3 = this.user_id + 1;
@@ -103,14 +114,16 @@ export class PlayerComponent implements OnInit {
     } else {
       idx3 = 5;
     }
-    console.log(`idx3; ${idx3}`);
+    // console.log(`idx3; ${idx3}`);
     this.updateScoreArray(idx3, value3);
   }
 
   updateScoreArray(draw_index: number, value: number) {
-    this.scores_local[draw_index] = value;
-    this.gameService.updateScores(this.scores_local);
-    console.log(`scores: ` + this.scores_local);
+    if (this.scores_local[draw_index] != value) {
+      this.scores_local[draw_index] = value;
+      this.gameService.updateScores(this.scores_local);
+      // console.log(`scores: ` + this.scores_local);
+    }
   }
 
   ngOnDestroy() {}

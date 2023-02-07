@@ -17,7 +17,7 @@ export class GameService {
 
   updateScores(scores: number[]) {
     this.scores.next(scores);
-    console.log(`service --scores: ` + this.scores);
+    // console.log(`service --scores: ` + this.scores);
   }
 
   getSingleUser(user_id: string) {
