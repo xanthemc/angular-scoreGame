@@ -1,6 +1,6 @@
 .row {
   display: table;
-  width: 100%;
+  width: 50%;
   table-layout: fixed;
   border-spacing: 10px;
   text-align: center;
@@ -10,3 +10,14 @@
   display: table-cell;
   text-align: center;
 }
+/* button {
+  background-color: transparent;
+  border: none;
+  color: #007bff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+button:hover {
+  color: #0056b3;
+} */
