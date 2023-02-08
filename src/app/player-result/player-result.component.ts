@@ -39,8 +39,8 @@ export class PlayerResultComponent {
   compareScores(costs: any[]) {
     const result = [];
     for (let i = 0; i < costs.length / 2; i++) {
-      const a = costs[i];
-      const b = costs[i + costs.length / 2];
+      let a = parseInt(costs[i]);
+      let b = parseInt(costs[i + costs.length / 2]);
       let largerValue, largerIndex, playerId;
       if (a > b) {
         largerValue = a;
@@ -51,6 +51,9 @@ export class PlayerResultComponent {
         largerIndex = i + costs.length / 2;
         playerId = 2;
       }
+      console.log(`a>b: ${a > b}`);
+      console.log(`a: ${a}`);
+      console.log(`b: ${b}`);
 
       // if(largerIndex==i)
       // console.log(`who wins: ${largerIndex}`);
@@ -70,6 +73,7 @@ export class PlayerResultComponent {
     winningIndexes: any[]
   ) {
     for (let i = 0; i < winningIndexes.length; i++) {
+      console.log(`winningIndexes: ${winningIndexes}`);
       if (winningIndexes[i] <= 2) {
         this.player1Wins++;
         if (i == 0) {

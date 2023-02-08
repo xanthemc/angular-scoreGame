@@ -11,15 +11,20 @@
       <label>
         Draw 1:
         <input [(ngModel)]="draw1" />
-
-        <!-- <span class="winning-badge" [hidden]="isWinning">W</span> -->
+        <span class="winning-badge" *ngIf="isWinning">W</span>
       </label>
 
       <label
         >Draw 2: <input [(ngModel)]="draw2" />
-        <!-- <span class="winning-badge" [hidden]="isWinning">W</span> -->
+        <span class="winning-badge" *ngIf="isWinning2">W</span>
       </label>
-      <label>Draw 3: <input [(ngModel)]="draw3" /></label>
+      <label
+        >Draw 3: <input [(ngModel)]="draw3" /><span
+          class="winning-badge"
+          *ngIf="isWinning3"
+          >W</span
+        >
+      </label>
     </div>
   </div>
 </div>

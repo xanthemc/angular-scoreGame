@@ -1,21 +1,33 @@
 <div class="row">
-  <span *ngFor="let win of scoreWin">Result: {{ win.index }} </span><br />
+  <span>George Bluth: {{ player1Wins }} </span>
 </div>
-<div>
-  <span>Player 1 Counts: {{ player1Wins }} </span>
-  <span>Player 2 Counts: {{ player2Wins }} </span>
+<div class="row">
+  <span>Janet Weaver: {{ player2Wins }} </span>
 </div>
 <div>
   <span>Final Winner {{ finalWinner }}</span>
 </div>
 <div class="row my-gap-row">
   <div class="column">
-    <app-player [user_id]="1">
+    <app-player
+      [user_id]="1"
+      [isWinning]="p1_draw1"
+      [isWinning2]="p1_draw2"
+      [isWinning3]="p1_draw3"
+    >
       <!-- <label *ngIf="scoreWin[0].index === 0">
         <span class="winning-badge">W</span>
       </label> -->
     </app-player>
   </div>
   <div class="column versus">VS</div>
-  <div class="column"><app-player [user_id]="2"> </app-player></div>
+  <div class="column">
+    <app-player
+      [user_id]="2"
+      [isWinning]="p2_draw4"
+      [isWinning2]="p2_draw5"
+      [isWinning3]="p2_draw6"
+    >
+    </app-player>
+  </div>
 </div>

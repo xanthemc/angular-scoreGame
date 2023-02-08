@@ -23,7 +23,9 @@ export class PlayerComponent implements OnInit {
   winning_arr: any;
   subscription!: Subscription;
   draw1_winning: Boolean = false;
-  // @Input() isWinning: Boolean = false;
+  @Input() isWinning: Boolean = false;
+  @Input() isWinning2: Boolean = false;
+  @Input() isWinning3: Boolean = false;
 
   constructor(
     private http: HttpClient,
@@ -66,6 +68,10 @@ export class PlayerComponent implements OnInit {
   }
 
   get draw1() {
+    if (this._draw1 < 0) {
+      return 0;
+    }
+
     // console.log('AppComponent.getter', this._draw1);
     return this._draw1;
   }
