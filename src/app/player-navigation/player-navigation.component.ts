@@ -8,6 +8,8 @@ import { GameService } from '../game.service';
   styleUrls: ['./player-navigation.component.css'],
 })
 export class PlayerNavigationComponent {
+  // scoreWin: any;
+
   showComponentA: boolean | undefined;
   showComponentB: boolean | undefined;
   showResult: boolean | undefined;
@@ -15,17 +17,9 @@ export class PlayerNavigationComponent {
   btnResultValid: boolean | undefined;
   private previousScores: any[] = [-1, -1, -1, -1, -1, -1];
 
-  // playerData = ['draw1', 'draw2', 'draw3'];
-  //   item = 'Television';
-  //  playerData = this.gameService.getData(1) || '';
-
   constructor(private http: HttpClient, private gameService: GameService) {}
 
   results: boolean | undefined;
-  // displayResult() {
-  //   this.btnResultValid = true;
-
-  // }
 
   ngOnInit() {
     this.gameService.currentScores.subscribe((scores) => {
@@ -36,7 +30,7 @@ export class PlayerNavigationComponent {
       if (areAllScoresEqualToMinusOne) {
         console.log('all scores are nort equal to -1');
         this.btnResultValid = true;
-        this.compareCostsWithIndex(scores);
+        // this.scoreWin = this.compareCostsWithIndex(scores);
         // this.previousScores = scores;
       }
 
@@ -89,6 +83,7 @@ export class PlayerNavigationComponent {
   displayResult() {
     console.log(`show true: ${this.showComponentB}`);
     this.showResult = true;
+    this.showComponentB = false;
   }
 
   compareCostsWithIndex(costs: any[]) {

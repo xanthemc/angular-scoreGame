@@ -1,12 +1,37 @@
 .row {
-  display: table;
+  display: flex;
   width: 100%;
-  table-layout: fixed;
+  /* table-layout: fixed; */
   border-spacing: 10px;
   text-align: center;
+  /* margin: 100px; */
 }
 
 .column {
-  display: table-cell;
+  display: flex;
+  text-align: center;
+  margin: auto;
+}
+
+.versus {
+  /* margin-top: 100px; */
+  /* margin-bottom: 100px; */
+  margin-right: 150px;
+  margin-left: 150px;
   text-align: center;
 }
+
+/* .my-gap-row {
+  gap: 20px;
+}
+.item {
+  height: 200px;
+  background-color: blue;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 1rem;
+}
+ */
