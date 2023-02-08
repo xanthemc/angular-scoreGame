@@ -17,3 +17,9 @@
   display: table-cell;
   text-align: center;
 }
+.winning-badge {
+  background-color: green;
+  color: white;
+  border-radius: 50%;
+  padding: 5px 10px;
+}

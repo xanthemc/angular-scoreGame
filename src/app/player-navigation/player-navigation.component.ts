@@ -33,41 +33,6 @@ export class PlayerNavigationComponent {
         // this.scoreWin = this.compareCostsWithIndex(scores);
         // this.previousScores = scores;
       }
-
-      /*   const areScoresEqual = this.previousScores.every(
-        (previousScore, index) => {
-          return (
-            JSON.stringify(previousScore) === JSON.stringify(scores[index])
-          );
-        }
-      );
-      if (!areScoresEqual) {
-        console.log('scores have changed');
-        this.btnResultValid = true;
-
-        // this.previousScores = scores;
-      } */
-      //Check if every scores changes
-      /*   let checker = (arr: any[], target: any[]) =>
-        target.every((v) => {
-          arr.includes(v);
-        });
-
-      let areScoresEqual = checker(this.previousScores, scores);
-      if (areScoresEqual) {
-        console.log('score equal' + areScoresEqual);
-      } */
-
-      // false
-      /*   if (JSON.stringify(this.previousScores) !== JSON.stringify(scores)) {
-        console.log('scores have changed');
-        this.btnResultValid = true;
-
-        // this.previousScores = scores;
-      } */
-      /* if (scores ==  ) console.log('The arrays have the same elements.');
-      else console.log('The arrays have different elements.'); */
-      //show button and allow display both player
     });
   }
   displayPlayerA() {

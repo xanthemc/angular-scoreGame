@@ -8,8 +8,17 @@
       <span class="row">Last Name: {{ user.last_name }}</span>
       <span class="row">Email: {{ user.email }}</span>
 
-      <label>Draw 1: <input [(ngModel)]="draw1" /></label>
-      <label>Draw 2: <input [(ngModel)]="draw2" /></label>
+      <label>
+        Draw 1:
+        <input [(ngModel)]="draw1" />
+
+        <!-- <span class="winning-badge" [hidden]="isWinning">W</span> -->
+      </label>
+
+      <label
+        >Draw 2: <input [(ngModel)]="draw2" />
+        <!-- <span class="winning-badge" [hidden]="isWinning">W</span> -->
+      </label>
       <label>Draw 3: <input [(ngModel)]="draw3" /></label>
     </div>
   </div>

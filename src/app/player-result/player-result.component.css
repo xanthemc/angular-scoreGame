@@ -20,6 +20,16 @@
   margin-left: 150px;
   text-align: center;
 }
+.badge {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 20px;
+  background-color: red;
+  color: white;
+}
 
 /* .my-gap-row {
   gap: 20px;

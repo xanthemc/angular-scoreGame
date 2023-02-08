@@ -16,15 +16,14 @@ export class PlayerComponent implements OnInit {
   @Output() itemChange = new EventEmitter();
   //two way binding for input
   private _draw1: any;
-
   private _draw2: any;
   private _draw3: any;
   playerData: any;
   scores_local: number[] = [];
-
-  // inputValue!: string;
-  // isFocused: boolean = false;
+  winning_arr: any;
   subscription!: Subscription;
+  draw1_winning: Boolean = false;
+  // @Input() isWinning: Boolean = false;
 
   constructor(
     private http: HttpClient,
