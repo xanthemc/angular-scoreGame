@@ -23,16 +23,21 @@
   </div>
 </div>
 <div class="row">
-  <div class="column"><h3>
-    <button type="button" [disabled]="!btnResultValid" (click)="displayResult()">
-      Result
-    </button>
-    <div class="row">
-      <div class="column">
-        <app-player-result *ngIf="showResult"> </app-player-result>
-        <!-- <app-player [user_id]="1"> </app-player> -->
+  <div class="column">
+    <h3>
+      <button
+        type="button"
+        [disabled]="!btnResultValid"
+        (click)="displayResult()"
+      >
+        Result
+      </button>
+      <div class="row">
+        <div class="column">
+          <app-player-result *ngIf="showResult"> </app-player-result>
+          <!-- <app-player [user_id]="1"> </app-player> -->
+        </div>
       </div>
-    </div>
-  </h3></div>
+    </h3>
+  </div>
 </div>
-

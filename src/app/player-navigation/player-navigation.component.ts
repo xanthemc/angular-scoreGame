@@ -36,8 +36,10 @@ export class PlayerNavigationComponent {
       if (areAllScoresEqualToMinusOne) {
         console.log('all scores are nort equal to -1');
         this.btnResultValid = true;
+        this.compareCostsWithIndex(scores);
         // this.previousScores = scores;
       }
+
       /*   const areScoresEqual = this.previousScores.every(
         (previousScore, index) => {
           return (
@@ -87,6 +89,31 @@ export class PlayerNavigationComponent {
   displayResult() {
     console.log(`show true: ${this.showComponentB}`);
     this.showResult = true;
-    this.showComponentB = false;
   }
+
+  compareCostsWithIndex(costs: any[]) {
+    const result = [];
+    for (let i = 0; i < costs.length / 2; i++) {
+      const a = costs[i];
+      const b = costs[i + costs.length / 2];
+      let largerValue, largerIndex;
+      if (a > b) {
+        largerValue = a;
+        largerIndex = i;
+      } else {
+        largerValue = b;
+        largerIndex = i + costs.length / 2;
+      }
+      result.push({
+        index: largerIndex,
+        value: largerValue,
+      });
+    }
+    console.log(`${JSON.stringify(result)}`);
+    return result;
+  }
+
+  // const costs = [2, 4, 4, 8, 30, 20];
+  // console.log(compareCostsWithIndex(costs));
+  // Output: [{ index: 3, value: 8 }, { index: 4, value: 30 }, { index: 5, value: 20 }]
 }
